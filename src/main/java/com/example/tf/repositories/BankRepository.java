@@ -4,7 +4,7 @@ import com.dbd23.demo1.library.LibraryException;
 import com.example.tf.model.*;
 
 import java.util.List;
-//import java.util.Optional;
+import java.util.Optional;
 
 public interface BankRepository {
     public void save(Bank bank) throws LibraryException;
@@ -17,5 +17,5 @@ public interface BankRepository {
 
     public List<Bank> findAll();
 
-    //public Optional<Bank> findWithMoreCustomer();
+    public List<Bank> findBankCustomerCount();
 }
