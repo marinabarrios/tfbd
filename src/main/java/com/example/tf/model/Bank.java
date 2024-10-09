@@ -1,12 +1,13 @@
 package com.example.tf.model;
 
 import javax.persistence.*;
-//import java.util.ArrayList;
-//import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "bank")
 public class Bank {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_bank")

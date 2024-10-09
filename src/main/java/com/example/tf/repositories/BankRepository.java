@@ -1,17 +1,17 @@
 package com.example.tf.repositories;
 
-import com.dbd23.demo1.library.LibraryException;
+import com.example.tf.TfException;
 import com.example.tf.model.*;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface BankRepository {
-    public void save(Bank bank) throws LibraryException;
+    public void save(Bank bank) throws TfException;
 
-    public void update(Bank bank) throws LibraryException;
+    public void update(Bank bank) throws TfException;
 
-    public boolean delete(Bank bank) throws LibraryException;
+    public boolean delete(Bank bank) throws TfException;
 
     public Optional<Bank> findById(Long id);
 

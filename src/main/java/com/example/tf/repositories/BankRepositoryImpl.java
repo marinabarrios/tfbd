@@ -1,13 +1,12 @@
 package com.example.tf.model;
 
-package com.example.tf.TfException;
-package com.example.tf.model.Bank;
+import com.example.tf.TfException;
+import com.example.tf.model.Bank;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,7 +17,7 @@ public class BankRepositoryImpl implements BankRepository{
     private SessionFactory sessionFactory;
 
     @Override
-    public void save(Bank bank) throws LibraryException{
+    public void save(Bank bank) throws TfException{
         Session session = null;
         try {
             session = this.sessionFactory.getCurrentSession();
@@ -29,7 +28,7 @@ public class BankRepositoryImpl implements BankRepository{
     }
 
     @Override
-    public void update(Bank bank) throws LibraryException {
+    public void update(Bank bank) throws TfException {
         Session session = null;
         try {
             session = this.sessionFactory.getCurrentSession();
@@ -40,7 +39,7 @@ public class BankRepositoryImpl implements BankRepository{
     }
 
     @Override
-    public boolean delete(Bank bank) throws LibraryException {
+    public boolean delete(Bank bank) throws TfException {
         Session session = null;
         try {
             session = this.sessionFactory.getCurrentSession();
