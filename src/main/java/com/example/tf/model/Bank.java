@@ -1,6 +1,6 @@
 package com.example.tf.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,8 +24,12 @@ public class Bank {
 
     @Column(length = 50)
     String telephone;
-
+/* 
     @OneToMany(mappedBy = "bank", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<Customer> customers = new ArrayList<>();*/
+
+    // Relación Many-to-Many con Customer (relación inversa)
+    @ManyToMany(mappedBy = "banks") // mappedBy indica que la relación está gestionada por la propiedad 'banks' en Customer
     private List<Customer> customers = new ArrayList<>();
 
     @OneToMany(mappedBy = "bank", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
@@ -107,7 +111,7 @@ public class Bank {
     public void setCards(List<Card> cards) {
         this.cards = cards;
     }
-
+/*
     //Métodos auxiliares para agregar o eliminar un Customer o Card
     public void addCustomer(Customer customer) {
         customers.add(customer);
@@ -127,5 +131,5 @@ public class Bank {
     public void removeCard(Card card) {
         cards.remove(card);
         card.setBank(null);
-    }
+    }*/
 }

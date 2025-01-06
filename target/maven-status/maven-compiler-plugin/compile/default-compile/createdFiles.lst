@@ -1,1 +1,9 @@
+com\example\tf\services\BankService.class
 com\example\tf\TfApplication.class
+com\example\tf\model\Customer.class
+com\example\tf\repositories\BankRepositoryImpl.class
+com\example\tf\config\HibernateConfiguration.class
+com\example\tf\model\Card.class
+com\example\tf\repositories\BankRepository.class
+com\example\tf\TfException.class
+com\example\tf\model\Bank.class

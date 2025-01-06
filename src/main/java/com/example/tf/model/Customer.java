@@ -1,9 +1,20 @@
 package com.example.tf.model;
 
-import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.time.LocalDate;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "customer")
@@ -58,7 +69,7 @@ public class Customer {
         this.entryDate = entryDate;
     }
 
-    public Customer(String completeName, String dni, String cuil, String address, String telephone, LocalDate entryDate) {
+    public Customer(Long id, String completeName, String dni, String cuil, String address, String telephone, LocalDate entryDate) {
         this.id = id;
         this.completeName = completeName;
         this.dni = dni;
@@ -117,13 +128,27 @@ public class Customer {
         this.telephone = telephone;
     }
 
-    public String getEntryDate() {
+    public LocalDate getEntryDate() {
         return entryDate;
     }
 
-    public void setEntryDate(String entryDate) {
+    public void setEntryDate(LocalDate entryDate) {
         this.entryDate = entryDate;
     }
 
-    //falta los métodos auxiliares con las tarjetas
+    public List<Bank> getBanks() {
+        return banks;
+    }
+
+    public void setBanks(List<Bank> banks) {
+        this.banks = banks;
+    }
+
+    public List<Card> getCards() {
+        return cards;
+    }
+
+    public void setCards(List<Card> cards) {
+        this.cards = cards;
+    }
 }
